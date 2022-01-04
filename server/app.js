@@ -1,9 +1,11 @@
 const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const schema = require("./schema/schema");
 const app = express();
 
+app.use(cors());
 CONNECTION_URL =
   "mongodb+srv://hamza:hamza.841998@cluster0.pbxdx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 mongoose.connect(CONNECTION_URL);
