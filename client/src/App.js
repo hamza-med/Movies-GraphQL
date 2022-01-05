@@ -12,8 +12,12 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App">
         <h1>Watch List</h1>
-        <MovieList />
-        <AddMovie />
+        <div>
+          <MovieList />
+        </div>
+        <div>
+          <AddMovie />
+        </div>
       </div>
     </ApolloProvider>
   );
