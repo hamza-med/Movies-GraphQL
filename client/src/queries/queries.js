@@ -18,4 +18,12 @@ const GET_DIRECTORS_QUERY = gql`
     }
   }
 `;
-export { GET_MOVIES_QUERY, GET_DIRECTORS_QUERY };
+const ADD_MOVIE_MUTATION = gql`
+  mutation ($name: String!, $genre: String!, $directorId: ID!) {
+    addMovie(name: $name, genre: $genre, directorId: $directorId) {
+      name
+      id
+    }
+  }
+`;
+export { ADD_MOVIE_MUTATION, GET_MOVIES_QUERY, GET_DIRECTORS_QUERY };
