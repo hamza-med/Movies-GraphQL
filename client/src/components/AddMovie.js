@@ -19,7 +19,9 @@ export default function AddMovie() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    addMovie({ name: name, genre: genre, directorId: directorID });
+    addMovie({
+      variables: { name: name, genre: genre, directorId: directorID },
+    });
   };
 
   return (
