@@ -1,6 +1,6 @@
 import { useQuery, useMutation } from "@apollo/client";
 import { useState } from "react";
-import { GET_DIRECTORS_QUERY, ADD_MOVIE_MUTATION } from "../queries/queries";
+import { GET_DIRECTORS_QUERY, ADD_MOVIE_MUTATION, GET_MOVIES_QUERY } from "../queries/queries";
 
 export default function AddMovie() {
   //Defining States
@@ -21,6 +21,7 @@ export default function AddMovie() {
     e.preventDefault();
     addMovie({
       variables: { name: name, genre: genre, directorId: directorID },
+      refetchQueries:[{query:GET_MOVIES_QUERY}]
     });
   };
 
