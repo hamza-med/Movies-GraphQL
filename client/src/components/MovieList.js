@@ -1,15 +1,6 @@
 import React from "react";
-import { gql, useQuery } from "@apollo/client";
-
-const GET_MOVIES_QUERY = gql`
-  {
-    movies {
-      name
-      genre
-      id
-    }
-  }
-`;
+import { useQuery } from "@apollo/client";
+import { GET_MOVIES_QUERY } from "../queries/queries";
 
 export default function MovieList() {
   const { loading, data, error } = useQuery(GET_MOVIES_QUERY);
@@ -21,9 +12,7 @@ export default function MovieList() {
   };
   return (
     <div>
-      <ul>
-        <li>{renderMovies()}</li>
-      </ul>
+      <ul>{renderMovies()}</ul>
     </div>
   );
 }
